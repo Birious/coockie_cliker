@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.coockie{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coockiecounter{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap : 2rem;
+  padding-top: 50px;
+}
+
+.coockiebutton{
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  font-size:0;
+  cursor : pointer;
+}
+
+.miniCookiesButton{
+  height: 80px;
+  width: 80px;
+  background: transparent;
+  border: none;
+  font-size:0;
+  cursor : pointer;
+}
+
+.coockieimg{
+  width: 100%;
+}
+
+.allMiniCoockies{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap : 1rem;
+}
+
+.coockiebooster{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap : 1rem;
+}
