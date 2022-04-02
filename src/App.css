@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+body{
+  background-color: grey;
+}
+
 .coockie{
   display: flex;
   justify-content: center;
@@ -13,8 +17,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap : 2rem;
-  padding-top: 50px;
+  gap : 1rem;
+  padding-top: 2rem;
 }
 
 .coockiebutton{
@@ -25,6 +29,7 @@
   border: none;
   font-size:0;
   cursor : pointer;
+  margin-top: 1rem;
 }
 
 .miniCookiesButton{
@@ -44,6 +49,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap : 1rem;
+  padding-top : 1rem;
 }
 
 .coockiebooster{

@@ -1,9 +1,9 @@
-const MiniCoockie = ({booster,color, valor}) => {
+const MiniCoockie = ({booster,color, valor, multiple}) => {
     return (
         <div className="coockiebooster">
             <button className="miniCookiesButton" onClick={booster}><img width="100%" src={`./coloredcoockies/${color}_coockie.png`} /></button>
-            <p>{valor}</p>
-            <p>Cost : {valor * 10}</p>
+            {multiple ? <p>+{valor} 🍪⏲️</p> : <p>+{valor} 🍪🖱️</p>}
+            {multiple ? <p>Cost : {valor * 100} 🍪</p> : <p>Cost : {valor * 10} 🍪</p>}
         </div>
     )
 }
