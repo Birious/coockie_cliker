@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/coockie_cliker.git/static/css/main.c9d2fbd8.css",
+    "main.js": "/coockie_cliker.git/static/js/main.9cb6a634.js",
+    "static/js/787.debfb021.chunk.js": "/coockie_cliker.git/static/js/787.debfb021.chunk.js",
+    "index.html": "/coockie_cliker.git/index.html",
+    "main.c9d2fbd8.css.map": "/coockie_cliker.git/static/css/main.c9d2fbd8.css.map",
+    "main.9cb6a634.js.map": "/coockie_cliker.git/static/js/main.9cb6a634.js.map",
+    "787.debfb021.chunk.js.map": "/coockie_cliker.git/static/js/787.debfb021.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9d2fbd8.css",
+    "static/js/main.9cb6a634.js"
+  ]
+}
