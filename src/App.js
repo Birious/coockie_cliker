@@ -5,9 +5,9 @@ import Counter from './Counter';
 function App() {
 
   return (
-    <div className='coockie'>
+    <>
       <Counter/>
-    </div>
+    </>
   );
 }
 
