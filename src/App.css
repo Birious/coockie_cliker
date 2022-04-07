@@ -1,16 +1,60 @@
+@font-face {
+  font-family: "comfortaa";
+  src: url(./Comfortaa-VariableFont_wght.ttf);
+}
+
+@keyframes slideIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideOff {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes dissapear {
+  0% {
+    transform :translate(0px, 0px);
+    opacity: 1;
+  }
+  100% {
+    transform :translate(0px, -50px);
+    opacity: 0;
+  }
+}
+
+
+
 *{
   margin: 0;
   padding: 0;
+  font-family: comfortaa;
 }
 
-/* body{
-  background-color: grey;
-} */
+p, img{
+  user-select: none;
+}
 
-.coockie{
+.coockiealive{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap : 1rem
 }
 
 .coockiecounter{
@@ -43,7 +87,32 @@
 
 .coockieimg{
   width: 100%;
+  transition: all 0.1s linear;
+
 }
+
+#coockieimgtry{
+  animation-name:slideIn;
+	animation-duration:0.1s;
+}
+
+#coockieimgtry2{
+  animation-name:slideOff;
+	animation-duration:0.1s;
+}
+
+.pMessage{
+  animation-name:dissapear;
+	animation-duration:1s;
+  animation-fill-mode: forwards;
+  color: white;
+}
+
+/* .test{
+  position: absolute;
+  top: 300px;
+  left: 250px;
+} */
 
 .allMiniCoockies{
   display: grid;
@@ -57,4 +126,18 @@
   align-items: center;
   flex-direction: column;
   gap : 1rem;
+}
+
+
+
+@media screen and (min-width: 450px) {
+  .coockiecounter{
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+
+  .allMiniCoockies{
+    padding-top: 0;
+  }
 }
