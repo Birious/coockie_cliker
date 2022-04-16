@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/coockie_cliker/static/css/main.b4fc347e.css",
-    "main.js": "/coockie_cliker/static/js/main.5d688def.js",
+    "main.css": "/coockie_cliker/static/css/main.ebcd612c.css",
+    "main.js": "/coockie_cliker/static/js/main.7247ba90.js",
     "static/js/787.debfb021.chunk.js": "/coockie_cliker/static/js/787.debfb021.chunk.js",
-    "static/media/Comfortaa-VariableFont_wght.ttf": "/coockie_cliker/static/media/Comfortaa-VariableFont_wght.42599e57da15daf79164.ttf",
+    "static/media/Bangers-Regular.ttf": "/coockie_cliker/static/media/Bangers-Regular.0e89a2279da24d283991.ttf",
+    "static/media/pngtree-grassland-landscape-cartoon-background-on-the-coast-treeyellow-flowerblue-sea-image_66957.jpg": "/coockie_cliker/static/media/pngtree-grassland-landscape-cartoon-background-on-the-coast-treeyellow-flowerblue-sea-image_66957.d45ce05cdb68be6a4917.jpg",
     "index.html": "/coockie_cliker/index.html",
-    "main.b4fc347e.css.map": "/coockie_cliker/static/css/main.b4fc347e.css.map",
-    "main.5d688def.js.map": "/coockie_cliker/static/js/main.5d688def.js.map",
+    "main.ebcd612c.css.map": "/coockie_cliker/static/css/main.ebcd612c.css.map",
+    "main.7247ba90.js.map": "/coockie_cliker/static/js/main.7247ba90.js.map",
     "787.debfb021.chunk.js.map": "/coockie_cliker/static/js/787.debfb021.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4fc347e.css",
-    "static/js/main.5d688def.js"
+    "static/css/main.ebcd612c.css",
+    "static/js/main.7247ba90.js"
   ]
 }
