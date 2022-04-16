@@ -16,6 +16,8 @@ const Counter = ({step = changeStep, isFavorite = false}) => {
         setCount(count + step);
     }
 
+
+
     useEffect( () => {
 
         setInterval( () => {
