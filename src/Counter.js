@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
-// import coockie from "./coockie.png";
 import MiniCoockie from "./minicoockie";
+import MessageOnClick from "./MessageOnClick";
 
 let changeStep = 1;
-let cps = 1;
+let cps = 0.1;
 
-const Counter = ({step = changeStep}) => {
+const Counter = ({step = changeStep, isFavorite = false}) => {
     const [count, setCount] = useState(0);
+    const [favorite, setFavorite] = useState(isFavorite);
+    const [posY, setPosY] = useState('0');
+    const [posX, setPosX] = useState('0');
+    const [addCoockie, setAddCoockie] = useState('');
 
     const uncrement = () => {
         setCount(count + step);
@@ -16,7 +20,7 @@ const Counter = ({step = changeStep}) => {
 
         setInterval( () => {
             setCount(count => count + cps)
-        }, 1000)
+        }, 100)
 
     },[])
 
@@ -35,34 +39,50 @@ const Counter = ({step = changeStep}) => {
         }
         if (count >= 100 && color === "green") {
             setCount(count - 100);
-            cps += 1;
+            cps += 0.1;
         }
         if (count >= 1000 && color === "yellow") {
             setCount(count - 1000);
-            cps += 10;
+            cps += 1;
         }
         if (count >= 10000 && color === "red") {
             setCount(count - 10000);
-            cps += 100;
+            cps += 10;
         }
     }
 
+    document.body.onmousemove = event => {
+        setPosX(event.clientX + 15)
+        setPosY(event.clientY - 25)
+    }
+    
+    const handleAddCoockie = (event) => {
+        event.preventDefault();
+        setFavorite(!favorite);
+        // setAddCoockie(<MessageOnClick posX={posX} posY={posY} numberCoockie={changeStep}/>);
+    };
+
+
     return (
-        <div className="coockiecounter">
-            <p>🍪 : {count}</p>
-            <p>🍪🖱️ : +{step}</p>
-            <p>🍪⏲️ : +{cps}</p>
-            <button className="coockiebutton" onClick={uncrement}><img className="coockieimg" src= "./coloredcoockies/coockie.png" /></button>
-            <div className="allMiniCoockies">
-                <MiniCoockie booster={() => modifier("white")} color = "white" valor = {1}/>
-                <MiniCoockie booster={() => modifier("black")} color = "black" valor = {10}/>
-                <MiniCoockie booster={() => modifier("cyan")} color = "cyan" valor = {100}/>
-                <MiniCoockie booster={() => modifier("green")} color = "green" valor = {1} multiple={true}/>
-                <MiniCoockie booster={() => modifier("yellow")} color = "yellow" valor = {10} multiple={true}/>
-                <MiniCoockie booster={() => modifier("red")} color = "red" valor = {100} multiple={true}/>
+        <div className="allc">
+        <h1>Coockie-Cliker</h1>
+            <div className="coockiecounter">     
+                <div className="coockiealive"> 
+                    <p>🍪 : {count.toFixed(1)}</p>
+                    <p>🍪🖱️ : +{step}</p>
+                    <p>🍪⏲️ : +{parseInt(cps*10)}</p>
+                    <button className="coockiebutton" onClick={uncrement}><img draggable="false" onClick = {handleAddCoockie} className="coockieimg" id={ favorite? "coockieimgtry" : "coockieimgtry2"} src= "./coloredcoockies/coockie.png" alt="main coockie" /></button>
+                </div>
+                <div className="allMiniCoockies" >
+                    <MiniCoockie booster={() => modifier("white")} color = "white" valor = {1}/>
+                    <MiniCoockie booster={() => modifier("black")} color = "black" valor = {10}/>
+                    <MiniCoockie booster={() => modifier("cyan")} color = "cyan" valor = {100}/>
+                    <MiniCoockie booster={() => modifier("green")} color = "green" valor = {1} multiple={true}/>
+                    <MiniCoockie booster={() => modifier("yellow")} color = "yellow" valor = {10} multiple={true}/>
+                    <MiniCoockie booster={() => modifier("red")} color = "red" valor = {100} multiple={true}/>
+                    <p>{addCoockie}</p>
+                </div>           
             </div>
-            
-            
         </div>
 
     );

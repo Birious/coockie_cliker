@@ -1,16 +1,73 @@
+@font-face {
+  font-family: "banger";
+  src: url(./Bangers-Regular.ttf);
+}
+
+@keyframes slideIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideOff {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes dissapear {
+  0% {
+    transform :translate(0px, 0px);
+    opacity: 1;
+  }
+  100% {
+    transform :translate(0px, -50px);
+    opacity: 0;
+  }
+}
+
+
 *{
   margin: 0;
   padding: 0;
+  font-family: banger;
 }
 
-/* body{
-  background-color: grey;
-} */
 
-.coockie{
+body{
+  font-size: 20px;
+  font-weight: 300;
+  background: url(pngtree-grassland-landscape-cartoon-background-on-the-coast-treeyellow-flowerblue-sea-image_66957.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+h1{
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+p, img{
+  user-select: none;
+}
+
+.coockiealive{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap : 1rem
 }
 
 .coockiecounter{
@@ -18,32 +75,55 @@
   align-items: center;
   flex-direction: column;
   gap : 1rem;
-  padding-top: 2rem;
+  height: 60vh;
 }
 
 .coockiebutton{
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   border-radius: 50%;
   background: transparent;
   border: none;
-  font-size:0;
   cursor : pointer;
   margin-top: 1rem;
 }
 
 .miniCookiesButton{
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   background: transparent;
   border: none;
-  font-size:0;
   cursor : pointer;
 }
 
 .coockieimg{
   width: 100%;
+  transition: all 0.1s linear;
+
 }
+
+#coockieimgtry{
+  animation-name:slideIn;
+	animation-duration:0.1s;
+}
+
+#coockieimgtry2{
+  animation-name:slideOff;
+	animation-duration:0.1s;
+}
+
+.pMessage{
+  animation-name:dissapear;
+	animation-duration:1s;
+  animation-fill-mode: forwards;
+  color: white;
+}
+
+/* .test{
+  position: absolute;
+  top: 300px;
+  left: 250px;
+} */
 
 .allMiniCoockies{
   display: grid;
@@ -57,4 +137,28 @@
   align-items: center;
   flex-direction: column;
   gap : 1rem;
+}
+
+
+
+@media screen and (orientation: landscape) {
+  .coockiecounter{
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .allMiniCoockies{
+    padding-top: 0;
+  }
+
+  .miniCookiesButton{
+    height: 100px;
+    width: 100px;
+  }
+
+  .coockiebutton{
+    height: 350px;
+    width: 350px;
+  }
+
 }
